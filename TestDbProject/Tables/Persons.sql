@@ -4,7 +4,8 @@
     [Surname] NVARCHAR(50) NOT NULL, 
     [Name] NVARCHAR(50) NOT NULL, 
     [Patronumic] NVARCHAR(50) NOT NULL, 
-    [DateBerf] DATE NULL
+    [DateBerf] DATE NULL, 
+    [Dateinput] DATETIME2 NOT NULL
 )
 
 GO
@@ -61,3 +62,12 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level1name = N'Persons',
     @level2type = N'COLUMN',
     @level2name = N'DateBerf'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Дата и время записи',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'Persons',
+    @level2type = N'COLUMN',
+    @level2name = N'Dateinput'
